@@ -16,16 +16,16 @@ class liveViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         drawRectMine(y: 340,w: 60)
-        drawRectMine(y: 400,w: 30)
-        drawRectMine(y: 460,w: 40)
-        drawRectMine(y: 520,w: 70)
-        drawRectMine(y: 580,w: 20)
+        drawRectMine(y: 405,w: 30)
+        drawRectMine(y: 470,w: 40)
+        drawRectMine(y: 535,w: 70)
+        drawRectMine(y: 600,w: 20)
         
         drawRectOther(y: 340,w: 30)
-        drawRectOther(y: 400,w: 70)
-        drawRectOther(y: 460,w: 80)
-        drawRectOther(y: 520,w: 0)
-        drawRectOther(y: 580,w: 50)
+        drawRectOther(y: 405,w: 70)
+        drawRectOther(y: 470,w: 80)
+        drawRectOther(y: 535,w: 0)
+        drawRectOther(y: 600,w: 50)
 
     }
     

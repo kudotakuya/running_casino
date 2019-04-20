@@ -89,7 +89,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     */
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "detail", sender:nil)
+        if indexPath.row == 0 {
+            performSegue(withIdentifier: "detail", sender:nil)
+        } else {
+            performSegue(withIdentifier: "result", sender:nil)
+        }
     }
 
 }
