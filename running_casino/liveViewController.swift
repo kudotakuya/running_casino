@@ -29,6 +29,16 @@ class liveViewController: UIViewController {
 
     }
     
+    // navigation bar display
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
     func drawRectMine(y: Int,w: Int){
         /* --- 四角形を描画 --- */
         let rectangleLayer = CAShapeLayer.init()

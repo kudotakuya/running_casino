@@ -31,6 +31,16 @@ class AddViewController: UIViewController , UIPickerViewDelegate, UIPickerViewDa
         // Do any additional setup after loading the view.
     }
     
+    // navigation bar display
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -75,7 +85,7 @@ class AddViewController: UIViewController , UIPickerViewDelegate, UIPickerViewDa
         }else{
             label.text = weekList[row]
         }
-        label.textColor = .blue
+        label.textColor = UIColor(red: 100/255, green: 100/255, blue: 255/255, alpha: 1)
         return label
     }
 
