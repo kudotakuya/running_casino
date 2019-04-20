@@ -62,6 +62,12 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // セルを取得する
         let cell = listTable.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath)
+        
+        // Tag番号 1 で UIImageView インスタンスの生成
+        let imageView = cell.viewWithTag(3) as! UIImageView
+        if indexPath.row == 1 {
+            imageView.image = UIImage(named: "cell_02.png")
+        }
         // セルに表示する値を設定する
         let datelabel = cell.viewWithTag(1) as! UILabel
         datelabel.text = "aaaa"

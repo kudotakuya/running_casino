@@ -57,6 +57,8 @@
 		88D18E31226B6ABC0061268A /* human001_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 88D18E2B226B6ABB0061268A /* human001_small.png */; };
 		88D18E32226B6ABC0061268A /* human006_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 88D18E2C226B6ABB0061268A /* human006_small.png */; };
 		88D18E33226B6ABC0061268A /* human003_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 88D18E2D226B6ABC0061268A /* human003_small.png */; };
+		88D18E35226B700A0061268A /* cell_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 88D18E34226B700A0061268A /* cell_01.png */; };
+		88D18E37226B70F90061268A /* cell_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 88D18E36226B70F70061268A /* cell_02.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +135,8 @@
 		88D18E2B226B6ABB0061268A /* human001_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = human001_small.png; sourceTree = "<group>"; };
 		88D18E2C226B6ABB0061268A /* human006_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = human006_small.png; sourceTree = "<group>"; };
 		88D18E2D226B6ABC0061268A /* human003_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = human003_small.png; sourceTree = "<group>"; };
+		88D18E34226B700A0061268A /* cell_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_01.png; sourceTree = "<group>"; };
+		88D18E36226B70F70061268A /* cell_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_02.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +206,8 @@
 				88D18E09226B65230061268A /* men_icon.png */,
 				88D18E18226B676E0061268A /* human002_big.png */,
 				88D18E2B226B6ABB0061268A /* human001_small.png */,
+				88D18E36226B70F70061268A /* cell_02.png */,
+				88D18E34226B700A0061268A /* cell_01.png */,
 				88D18E28226B6AB90061268A /* human002_small.png */,
 				88D18E2D226B6ABC0061268A /* human003_small.png */,
 				88D18E2C226B6ABB0061268A /* human006_small.png */,
@@ -361,6 +367,8 @@
 				88D18E11226B65250061268A /* men_small.png in Resources */,
 				88D18E05226B63C30061268A /* avatar.png in Resources */,
 				8858A2DD226B2CD400E31DFE /* othe_back.png in Resources */,
+				88D18E37226B70F90061268A /* cell_02.png in Resources */,
+				88D18E35226B700A0061268A /* cell_01.png in Resources */,
 				88D18E21226B67710061268A /* human002_big.png in Resources */,
 				88D18E1F226B67710061268A /* human005_small.png in Resources */,
 				88D18E27226B67710061268A /* human008_big.png in Resources */,
