@@ -9,13 +9,18 @@
 import UIKit
 
 class liveViewController: UIViewController {
+    
+    var timer = Timer()
+    
+    //processing count
+    var count = 20
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        drawRectMine(y: 340,w: 60)
+        drawRectMine(y: 340,w: 20)
         drawRectMine(y: 405,w: 30)
         drawRectMine(y: 470,w: 40)
         drawRectMine(y: 535,w: 70)
@@ -26,6 +31,14 @@ class liveViewController: UIViewController {
         drawRectOther(y: 470,w: 80)
         drawRectOther(y: 535,w: 0)
         drawRectOther(y: 600,w: 50)
+        
+        //timer処理
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { (timer) in
+            if self.count < 95{
+                self.count += 4
+            }
+            self.drawRectMine(y: 340,w: self.count)
+        })
 
     }
     

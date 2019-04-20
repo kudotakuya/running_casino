@@ -47,7 +47,6 @@ class AddViewController: UIViewController , UIPickerViewDelegate, UIPickerViewDa
     func postData() {
         let urlStr = "http://version1.tech/join_event?term=5&bet=1000"
         print(urlStr);
-        self.performSegue(withIdentifier: "save", sender:nil)
         if let url = URL(string: urlStr) {
             let req = NSMutableURLRequest(url: url)
             req.httpMethod = "POST"
@@ -64,6 +63,8 @@ class AddViewController: UIViewController , UIPickerViewDelegate, UIPickerViewDa
             })
             task.resume()
         }
+        
+        self.performSegue(withIdentifier: "save", sender:nil)
         
     }
     
