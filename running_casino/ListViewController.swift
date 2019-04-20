@@ -12,6 +12,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
 
     @IBOutlet weak var listTable: UITableView!
+    var fromText: [String] = []
+    var toText: [String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,44 +21,55 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         listTable.dataSource = self
         // Do any additional setup after loading the view.
         
+        getData()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.listTable.reloadData()
+        }
         
-//        let urlStr = "https://version1.tech/events/"
-//        print(urlStr);
-//        if let url = URL(string: urlStr) {
-//            let req = NSMutableURLRequest(url: url)
-//            req.httpMethod = "GET"
-//            let task = URLSession.shared.dataTask(with: req as URLRequest, completionHandler: { (data, resp, err) in
-//                // print(resp!.url!)
-//                //print(NSString(data: data!, encoding: String.Encoding.utf8.rawValue) as Any)
-//                
-//                // 受け取ったdataをJSONパース、エラーならcatchへジャンプ
-//                do {
-//                    // dataをJSONパースし、グローバル変数"getJson"に格納
-//                    let Json = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! NSArray
-//                    
-//                    for i in 0..<Json.count {
-//                        
-//                        print(Json[i])
-//                        
-//                    }
-//                    
-//                } catch {
-//                    print ("json error")
-//                    return
-//                }
-//                
-//                
-//            })
-//            task.resume()
-//            
-//            
-//        }
-        
+
+    }
+
+    func getData() {
+        let urlStr = "http://version1.tech/events"
+        print(urlStr);
+        if let url = URL(string: urlStr) {
+            let req = NSMutableURLRequest(url: url)
+            req.httpMethod = "GET"
+            let task = URLSession.shared.dataTask(with: req as URLRequest, completionHandler: { (data, resp, err) in
+                // print(resp!.url!)
+                //print(NSString(data: data!, encoding: String.Encoding.utf8.rawValue) as Any)
+                
+                // 受け取ったdataをJSONパース、エラーならcatchへジャンプ
+                do {
+                    // dataをJSONパースし、グローバル変数"getJson"に格納
+                    let Json = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! NSArray
+                    
+                    for i in 0..<Json.count {
+                        
+                        let list = Json[i] as! [String:Any]
+                        print(list["from"] as! String)
+                        self.fromText.append(list["from"] as! String)
+                        print(list["to"] as! String)
+                        self.toText.append(list["to"] as! String)
+                        
+                        
+                    }
+                    
+                    
+                } catch {
+                    print ("json error")
+                    return
+                }
+                
+                
+            })
+            task.resume()
+        }
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return self.fromText.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -70,10 +83,10 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         // セルに表示する値を設定する
         let datelabel = cell.viewWithTag(1) as! UILabel
-        datelabel.text = "aaaa"
+        datelabel.text = self.fromText[indexPath.row]
         
          let label2 = cell.viewWithTag(2) as! UILabel
-        label2.text = "bbbb"
+        label2.text = self.toText[indexPath.row]
         return cell
     }
     
