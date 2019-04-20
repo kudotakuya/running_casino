@@ -36,9 +36,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             let req = NSMutableURLRequest(url: url)
             req.httpMethod = "GET"
             let task = URLSession.shared.dataTask(with: req as URLRequest, completionHandler: { (data, resp, err) in
-                // print(resp!.url!)
-                //print(NSString(data: data!, encoding: String.Encoding.utf8.rawValue) as Any)
-                
+
                 // 受け取ったdataをJSONパース、エラーならcatchへジャンプ
                 do {
                     // dataをJSONパースし、グローバル変数"getJson"に格納
@@ -52,15 +50,12 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                         print(list["to"] as! String)
                         self.toText.append(list["to"] as! String)
                         
-                        
                     }
-                    
                     
                 } catch {
                     print ("json error")
                     return
                 }
-                
                 
             })
             task.resume()

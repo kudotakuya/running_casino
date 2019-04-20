@@ -79,7 +79,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Giu-eI-xfo" kind="show" id="E22-OU-Jmf"/>
+                                    <action selector="saveButton:" destination="s4x-iy-SPr" eventType="touchUpInside" id="b7E-Gh-A7K"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -89,6 +89,7 @@
                     <connections>
                         <outlet property="betPicker" destination="gsb-Zh-7Vu" id="eR8-4Z-S4e"/>
                         <outlet property="weekPicker" destination="1Xk-7C-ILT" id="apf-UP-INC"/>
+                        <segue destination="Giu-eI-xfo" kind="show" identifier="save" id="Eja-9V-ipR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gRR-lC-PRc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -311,14 +312,14 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2019.04/01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMd-ps-TMh">
-                                                    <rect key="frame" x="23" y="26" width="129" height="28"/>
+                                                    <rect key="frame" x="23" y="26" width="146" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2019.04/08" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4s-Er-o7n">
-                                                    <rect key="frame" x="231" y="69" width="133" height="28"/>
+                                                    <rect key="frame" x="213" y="69" width="151" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -420,7 +421,7 @@
         <image name="top.png" width="375" height="812"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="E22-OU-Jmf"/>
+        <segue reference="Eja-9V-ipR"/>
         <segue reference="P3Q-pK-nTc"/>
     </inferredMetricsTieBreakers>
 </document>

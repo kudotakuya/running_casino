@@ -15,7 +15,7 @@ class AddViewController: UIViewController , UIPickerViewDelegate, UIPickerViewDa
     
     let betList = ["100円", "500円", "1000円"]
     let weekList = [
-        "2019/4/20 ~ 2019/4/27",
+        "2019/4/2 ~ 2019/4/27",
         "2019/4/20 ~ 2019/4/27",
         "2019/4/20 ~ 2019/4/27"
         ]
@@ -41,6 +41,31 @@ class AddViewController: UIViewController , UIPickerViewDelegate, UIPickerViewDa
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
+    @IBAction func saveButton(_ sender: Any) {
+        postData()
+    }
+    func postData() {
+        let urlStr = "http://version1.tech/join_event?term=5&bet=1000"
+        print(urlStr);
+        self.performSegue(withIdentifier: "save", sender:nil)
+        if let url = URL(string: urlStr) {
+            let req = NSMutableURLRequest(url: url)
+            req.httpMethod = "POST"
+            let task = URLSession.shared.dataTask(with: req as URLRequest, completionHandler: { (data, resp, err) in
+                
+                // 受け取ったdataをJSONパース、エラーならcatchへジャンプ
+                do {
+
+                } catch {
+                    print ("json error")
+                    return
+                }
+                
+            })
+            task.resume()
+        }
+        
+    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
